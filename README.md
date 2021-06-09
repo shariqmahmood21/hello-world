@@ -4,7 +4,6 @@ Hello-World
 Install
 -------
 
-
     # clone the repository
     $ git clone https://github.com/shariqmahmood21/hello-world.git
     $ cd hello-world
@@ -43,8 +42,19 @@ Or on Windows cmd::
     > set FLASK_DEBUG=1 #Run this to enable DEBUG
     > flask run
 
-Open http://127.0.0.1:5000 in a browser.
-
+Validation
+---------- 
+* To test GET: 
+    > Open http://127.0.0.1:5000 in a browser.
+* To test GET + Accept Header:
+    > Open Terminal and paste
+   
+      curl -v  http://127.0.0.1:5000/ -H "X-accept-header: application/json" 
+* To test POST:
+    > Open Terminal and paste
+   
+      curl -X POST  http://127.0.0.1:5000/ 
+            
 
 Test
 ----

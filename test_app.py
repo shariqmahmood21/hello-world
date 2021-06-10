@@ -23,3 +23,12 @@ def test_hello_world_get_header_xml():
     response = app.test_client().get('/', headers={'X-accept-header': 'application/xml'})
     assert response.status_code == 200
     assert response.data == b'<p>Hello, World</p>'
+
+
+def test_hello_world_get_invalid_path():
+    response = app.test_client().get('/dummy')
+    assert response.status_code == 404
+
+def test_hello_world_get_invalid_method():
+    response = app.test_client().put('/')
+    assert response.status_code == 405

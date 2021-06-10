@@ -1,6 +1,11 @@
 Hello-World
 ======
 
+Pre-Rquisite : 
+
+ * Python3
+ * pip
+ 
 Install
 -------
 

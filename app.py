@@ -12,7 +12,7 @@ def hello_world():
     if request.method == 'GET' and request.headers.get('X-accept-header') == "application/json":
         # Requirement: If Debug enabled, log timestamp and request URL"
         app.logger.debug(str(datetime.now()) + "\t" + request.url )
-        return {"message": "Hello, World"}
+        return '{"message": "Hello, World"}'
     # Requirement : If the request header : "Accept header" NOT equals "application/json" , return string
     app.logger.debug(str(datetime.now()) + "\t" + request.url)
     return '<p>Hello, World</p>'

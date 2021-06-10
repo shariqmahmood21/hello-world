@@ -13,7 +13,13 @@ def test_hello_world_post():
     assert response.data == b'<p>Hello, World</p>'
 
 
-def test_hello_world_get_header():
+def test_hello_world_get_header_json():
     response = app.test_client().get('/', headers={'X-accept-header': 'application/json'})
     assert response.status_code == 200
-    assert response.data == b'{"message":"Hello, World"}\n'
+    assert response.data == b'{"message": "Hello, World"}'
+
+
+def test_hello_world_get_header_xml():
+    response = app.test_client().get('/', headers={'X-accept-header': 'application/xml'})
+    assert response.status_code == 200
+    assert response.data == b'<p>Hello, World</p>'
